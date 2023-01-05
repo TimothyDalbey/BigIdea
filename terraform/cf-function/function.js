@@ -1,15 +1,21 @@
 function handler(event) {
   var authHeaders = event.request.headers.authorization;
 
+  // If the distribution doesn't match "prod"
+  var presentAuth = !(event.context.distributionDomainName === 'd1qgi9n0rh7eko.cloudfront.net');
+  if(!presentAuth){
+    return event.request;
+  }
+
+  // If an Authorization header is supplied and it's an exact match, pass the
+  // request on through to CF/the origin without any modification
+
   // The Base64-encoded Auth string that should be present.
   // It is an encoding of `Basic base64([username]:[password])`
   // The username and password are:
   //      Username: bigidea
-  //      Password: enterprises
+  //      Password: enterprisess
   var expected = "Basic YmlnaWRlYTplbnRlcnByaXNlcw==";
-
-  // If an Authorization header is supplied and it's an exact match, pass the
-  // request on through to CF/the origin without any modification
   if (authHeaders && authHeaders.value === expected) {
     return event.request;
   }
