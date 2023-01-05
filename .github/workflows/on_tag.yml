@@ -15,7 +15,7 @@ permissions:
 env:
   BD_SDLC_ENV: prod
   BUCKET_NAME: tmd-bigidea-fe-react-prod
-  DEPLOYMENT_ROLE_ARN: arn:aws:iam::223651443348:role/bigidea-deployment
+  DEPLOYMENT_ROLE_ARN: 'arn:aws:iam::223651443348:role/bigidea-deployment'
 
 jobs:
   build-deploy:
@@ -38,9 +38,9 @@ jobs:
       - name: Assume AWS Role
         uses: aws-actions/configure-aws-credentials@v1
         with:
-          aws-region: 'us-west-2'
-          role-to-assume: $DEPLOYMENT_ROLE_ARN
-          role-session-name: 'github-action-deployment'
+          aws-region: us-west-2
+          role-to-assume: arn:aws:iam::223651443348:role/bigidea-deployment
+          role-session-name: github-action-deployment
           role-duration-seconds: 3600
           role-skip-session-tagging: true
 
