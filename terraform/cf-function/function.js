@@ -6,10 +6,11 @@ function handler(event) {
   // The username and password are:
   //      Username: bigidea
   //      Password: enterprises
+  var expected = "Basic am9objpmb29iYXI=";
 
   // If an Authorization header is supplied and it's an exact match, pass the
   // request on through to CF/the origin without any modification
-  if (authHeaders === 'Basic YmlnaWRlYTplbnRlcnByaXNlcw==') {
+  if (authHeaders && authHeaders.value === expected) {
     return event.request;
   }
 
