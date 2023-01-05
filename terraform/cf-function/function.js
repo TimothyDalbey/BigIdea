@@ -6,7 +6,7 @@ function handler(event) {
   // The username and password are:
   //      Username: bigidea
   //      Password: enterprises
-  var expected = "Basic am9objpmb29iYXI=";
+  var expected = "Basic YmlnaWRlYTplbnRlcnByaXNlcw==";
 
   // If an Authorization header is supplied and it's an exact match, pass the
   // request on through to CF/the origin without any modification
