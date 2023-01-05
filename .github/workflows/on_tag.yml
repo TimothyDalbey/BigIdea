@@ -13,7 +13,7 @@ permissions:
   contents: read
 
 env:
-  BD_SDLC_ENV: prod
+  SDLC_ENV: prod
   BUCKET_NAME: tmd-bigidea-fe-react-prod
 
 jobs:
