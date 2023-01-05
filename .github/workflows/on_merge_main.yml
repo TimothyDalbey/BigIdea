@@ -15,7 +15,6 @@ permissions:
 env:
   SDLC_ENV: dev
   BUCKET_NAME: tmd-bigidea-fe-react-dev
-  DEPLOYMENT_ROLE_ARN: arn:aws:iam::223651443348:role/bigidea-deployment
 
 jobs:
   build-deploy:
