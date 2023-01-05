@@ -9,7 +9,7 @@ function handler(event) {
 
   // If an Authorization header is supplied and it's an exact match, pass the
   // request on through to CF/the origin without any modification
-  if (authHeaders === 'YmlnaWRlYTplbnRlcnByaXNlcw==') {
+  if (authHeaders === 'Basic YmlnaWRlYTplbnRlcnByaXNlcw==') {
     return event.request;
   }
 
