@@ -39,7 +39,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-region: us-west-2
-          role-to-assume: $DEPLOYMENT_ROLE_ARN
+          role-to-assume: arn:aws:iam::223651443348:role/bigidea-deployment
           role-session-name: github-action-deployment
           role-duration-seconds: 3600
           role-skip-session-tagging: true
